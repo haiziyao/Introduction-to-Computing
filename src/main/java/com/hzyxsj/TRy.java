@@ -2,6 +2,7 @@ package com.hzyxsj;
 
 import com.hzyxsj.util.readFile;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -12,7 +13,7 @@ import java.nio.charset.StandardCharsets;
  * 版本号：随缘
  */
 public class TRy {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        Integer a=255;
 //        String as=Integer.toBinaryString(a);
 //        System.out.println(as);
@@ -25,7 +26,8 @@ public class TRy {
         System.out.println(thisIsATest );
 
         System.out.println("-------------------");
-        String endcodestr=new MessageRead().decodeBinary("001111110011111100111111001111110011111100111111");
+        String binary=new readFile().readFile2("C:/Users/17542/Desktop/ascii.txt");
+        String endcodestr=new MessageRead().decodeBinary(binary);
         System.out.println(endcodestr);
 
     }

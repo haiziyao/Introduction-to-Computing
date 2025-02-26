@@ -31,6 +31,7 @@ public class ImageToRGB2 {
         //得到图片的宽高
         int height=bf.getHeight();
         int width=bf.getWidth();
+        int add=0;
         //得到了想要RGB的数组,我给出数组只是一个习惯，其实这里应该作用不大
          RGB[][] rgb=new  RGB[height][width];
         for(int y=0;y<height;y++){
@@ -44,10 +45,17 @@ public class ImageToRGB2 {
                 num[0]=c.getRed();
                 num[1]=c.getGreen();
                 num[2]=c.getBlue();
+
+//             采用BGR
+//                num[2]=c.getRed();
+//                num[1]=c.getGreen();
+//                num[0]=c.getBlue();
                 for (int i = 0; i < 3; i++) {
                     String s=Integer.toBinaryString(num[i]);
                     int a= (int)s.charAt(s.length()-1);
+                    if (add==8){bos.write(' ');add=0;}
                     bos.write(a);
+                    add++;
                 }
 
             }

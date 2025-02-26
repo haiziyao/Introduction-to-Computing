@@ -10,6 +10,7 @@ import java.io.*;
  * 版本号：随缘
  */
 public class readFile {
+    @Deprecated
     public String readFile(String fileName) throws IOException {
         BufferedInputStream bf = new BufferedInputStream(new FileInputStream(fileName));
         int data;
